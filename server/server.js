@@ -56,15 +56,19 @@ var server = http.createServer(function (request, response) {
         case "/feed.css":
             response.writeHead(200, {"Content-Type": "text/css"});
             response.write(feedCSS);
+            break;
         case "/profile.css":
             response.writeHead(200, {"Content-Type": "text/css"});
             response.write(profileCSS);
+            break;
         case "/profile.html":
             response.writeHead(200, {"Content-Type": "text/html"});
             response.write(profileHTML);
+            break;
         case "social_feed.html":
             response.writeHead(200, {"Content-Type": "text/html"});
             response.write(socialfeedHTML);
+            break;
         default :    
             response.writeHead(200, {"Content-Type": "text/html"});
             response.write(indexHTML);
