@@ -2,19 +2,48 @@ var http = require('http');
 var fs = require('fs');
 var path = require("path");
 
-var htmlFile;
-var cssFile;
+var indexHTML
+var styleCSS
+var feedCSS
+var profileCSS
+var profileHTML
+var socialfeedHTML 
+
 fs.readFile(path.join(__dirname,'..','index.html'),function(err,data) {
     if (err){
         throw err;
     }
-    htmlFile = data;
+    indexHTML = data;
 })  
 fs.readFile(path.join(__dirname,'..','style.css'),function(err,data) {
     if (err){
         throw err;
     }
-    cssFile = data;
+    styleCSS = data;
+}) 
+fs.readFile(path.join(__dirname,'..','profile.css'),function(err,data) {
+    if (err){
+        throw err;
+    }
+    profileCSS = data;
+})
+fs.readFile(path.join(__dirname,'..','profile.html'),function(err,data) {
+    if (err){
+        throw err;
+    }
+    profileHTML = data;
+})
+fs.readFile(path.join(__dirname,'..','feed.css'),function(err,data) {
+    if (err){
+        throw err;
+    }
+    feedCSS = data;
+}) 
+fs.readFile(path.join(__dirname,'..','social_feed.html'),function(err,data) {
+    if (err){
+        throw err;
+    }
+    socialfeedHTML = data;
 }) 
 
 
@@ -22,11 +51,23 @@ var server = http.createServer(function (request, response) {
     switch (request.url) {
         case "/style.css" :
             response.writeHead(200, {"Content-Type": "text/css"});
-            response.write(cssFile);
+            response.write(styleCSS);
             break;
+        case "/feed.css":
+            response.writeHead(200, {"Content-Type": "text/css"});
+            response.write(feedCSS);
+        case "/profile.css":
+            response.writeHead(200, {"Content-Type": "text/css"});
+            response.write(profileCSS);
+        case "/profile.html":
+            response.writeHead(200, {"Content-Type": "text/html"});
+            response.write(profileHTML);
+        case "social_feed.html":
+            response.writeHead(200, {"Content-Type": "text/html"});
+            response.write(socialfeedHTML);
         default :    
             response.writeHead(200, {"Content-Type": "text/html"});
-            response.write(htmlFile);
+            response.write(indexHTML);
     }
     response.end();
 });
