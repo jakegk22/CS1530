@@ -1,6 +1,10 @@
-var http = require('http');
-var fs = require('fs');
-var path = require("path");
+const express = require('express')
+const path = require("path");
+const fs = require('fs');
+const http = require('http');
+
+const app = express()
+const port = 3000
 
 var indexHTML
 var styleCSS
@@ -9,75 +13,15 @@ var profileCSS
 var profileHTML
 var socialfeedHTML 
 
-fs.readFile(path.join(__dirname,'..','index.html'),function(err,data) {
-    if (err){
-        throw err;
-    }
-    indexHTML = data;
-})  
-fs.readFile(path.join(__dirname,'..','style.css'),function(err,data) {
-    if (err){
-        throw err;
-    }
-    styleCSS = data;
-}) 
-fs.readFile(path.join(__dirname,'..','profile.css'),function(err,data) {
-    if (err){
-        throw err;
-    }
-    profileCSS = data;
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,'..','index.html'));
 })
-fs.readFile(path.join(__dirname,'..','profile.html'),function(err,data) {
-    if (err){
-        throw err;
-    }
-    profileHTML = data;
+app.get('/style.css',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','style.css'));
 })
-fs.readFile(path.join(__dirname,'..','feed.css'),function(err,data) {
-    if (err){
-        throw err;
-    }
-    feedCSS = data;
-}) 
-fs.readFile(path.join(__dirname,'..','social_feed.html'),function(err,data) {
-    if (err){
-        throw err;
-    }
-    socialfeedHTML = data;
-}) 
-
-
-var server = http.createServer(function (request, response) {
-    switch (request.url) {
-        case "/style.css" :
-            response.writeHead(200, {"Content-Type": "text/css"});
-            response.write(styleCSS);
-            break;
-        case "/feed.css":
-            response.writeHead(200, {"Content-Type": "text/css"});
-            response.write(feedCSS);
-            break;
-        case "/profile.css":
-            response.writeHead(200, {"Content-Type": "text/css"});
-            response.write(profileCSS);
-            break;
-        case "/profile.html":
-            response.writeHead(200, {"Content-Type": "text/html"});
-            response.write(profileHTML);
-            break;
-        case "social_feed.html":
-            response.writeHead(200, {"Content-Type": "text/html"});
-            response.write(socialfeedHTML);
-            break;
-        default :    
-            response.writeHead(200, {"Content-Type": "text/html"});
-            response.write(indexHTML);
-    }
-    response.end();
-});
-
-//Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(3000);
-
-
-console.log("Server running at http://127.0.0.1:22/");
+app.get('')
+  
+  app.listen(port, () => {
+    console.log(`listening at http://localhost:${port}`)
+})
