@@ -16,6 +16,12 @@ app.get('/social_feed.html',(req,res) => {
 app.get('/feed.css',(req,res) => {
     res.sendFile(path.join(__dirname,'..','feed.css'));
 })
+app.get('/profile.html',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','profile.html'));
+})
+app.get('/profile.css',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','profile.css'));
+})
 
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)
