@@ -22,6 +22,10 @@ app.get('/profile.html',(req,res) => {
 app.get('/profile.css',(req,res) => {
     res.sendFile(path.join(__dirname,'..','profile.css'));
 })
+app.get('/social.js',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','social.js'));
+})
+
 
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)
