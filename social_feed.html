@@ -3,13 +3,14 @@
     <head>
         <link rel = "stylesheet" href="feed.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="social.js"></script>
     </head>
 
     <body>
         <div id="myheader" class="header">
             LOCALS
         </div>
-        
+
         <div id="myside-menu" class="side-menu">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#" onclick="location.href='profile.html'">Profile</a>
@@ -18,7 +19,7 @@
 
         <div id="myfeed" class="feed">
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <div class= post> 
+            <div class= post>
                 *Event posted on your feed
             </div>
 
@@ -45,7 +46,7 @@
               document.getElementById("myheader").style.opacity =".5";
 
             }
-            
+
             function closeNav() {
               document.getElementById("myside-menu").style.width = "0";
               document.getElementById("myfeed").style.marginLeft= "0";
@@ -64,4 +65,3 @@
         </script>
     </body>
 </html>
-
