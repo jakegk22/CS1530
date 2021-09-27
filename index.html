@@ -1,49 +1,74 @@
 <html>
-    <head>
-        <link rel = "stylesheet" href="style.css">
-    </head>
-    <body>
+<head>
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <div class = "login-div">
-            <div class="logo">
+<body>
+    <div class="container">
+        <div class="card">
+            
+            <div class="inner-box" id="card">
+            <div class="card-front">
+               
+                <h2>Login</h2>
+                <form>
+                    <input type="email" class="input-box"
+                    placeholder="Your Email Id" required>
+
+                    <input type="password" class="input-box"
+                    placeholder="Password" required>
+<button type="submit" class="submit-btn">Submit</button>
+
+<input type="checkbox"><span>Remember Me</span>
+                </form>
+                <button type="button" class="btn" onclick="openRegister()">"I'm new here"</button>
+                <a href="">Forgot Password</a>
+            
+            </div>
+            <div class="card-back">
+
+                <h2>Register</h2>
+                <form>
+                    <input type="text" class="input-box"
+                    placeholder="Your Name" required>
+
+
+                    <input type="email" class="input-box"
+                    placeholder="Your Email Id" required>
+
+                    <input type="password" class="input-box"
+                    placeholder="Password" required>
+<button type="submit" class="submit-btn">Submit</button>
+
+<input type="checkbox"><span>Remember Me</span>
+                </form>
+                <button type="button" class="btn" onclick="openLogin()">"I've an account"</button>
+                <a href="">Forgot Password</a>
+
+
 
             </div>
-
-            <div class = "title">CS1530 Login</div>
-            <div class = "sub-title">Event Planning App</div>
-
-            <div class="form">
-
-                <div class="username">
-                    <input type="text" placeholder="Username or Email">
-                </div>
-
-                <div class ="password">
-                    <input type ="password" placeholder="Password">
-                </div>
-
-                <div class = "options">
-                    <div class="remember-me">
-                        <input id="remember-me" type="checkbox">
-                        <label for="remember-me">Remember me?</label>
-                    </div>
-
-                    <div class="forgot-password">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                </div>
-
-                
-
-                <button class="signin-btn">Login</button>
-
-                <div class="sign-up">
-                    <a href="#">Dont have an account? Sign up here!</a>
-                </div>
-
-            </div>
-
+        </div>
         </div>
 
-    </body>
+    </div>
+
+    <script>
+
+var card = document.getElementById("card");
+function openRegister(){
+    card.style.transform = "rotateY(-180deg)";
+    document.getElementsByClassName("btn").disabled = true;
+}
+function openLogin(){
+    card.style.transform = "rotateY(0deg)";
+}
+
+    </script>
+</body>
+
+
+
+
 </html>
