@@ -9,16 +9,16 @@
         <div id="myheader" class="header">
             LOCALS
         </div>
-        
+
         <div id="myside-menu" class="side-menu">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#" onclick="location.href='profile.html'">Profile</a>
-            <a href="#">Create an Event</a>
+            <a href="#" onclick="location.href='create_event.html'">Create an Event</a>
         </div>
 
         <div id="myfeed" class="feed">
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <div class= post> 
+            <div class= post>
                 *Event posted on your feed
             </div>
 
@@ -45,7 +45,7 @@
               document.getElementById("myheader").style.opacity =".5";
 
             }
-            
+
             function closeNav() {
               document.getElementById("myside-menu").style.width = "0";
               document.getElementById("myfeed").style.marginLeft= "0";
@@ -64,4 +64,3 @@
         </script>
     </body>
 </html>
-
