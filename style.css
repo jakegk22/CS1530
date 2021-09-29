@@ -24,7 +24,7 @@
     height: 100%;
     transform-style: preserve-3d;
     transform: rotateY(-180deg);
-    transition: transform 1s;
+    transition: transform .5s;
 }
 .card-front, .card-back{
 position: absolute;
@@ -80,7 +80,8 @@ button{
     cursor: pointer;
 }
 .submit-btn{
-    position: relative;
+    position: fixed;
+    width: 240px;
 }
 .submit-btn::after{
     content: '\27a4';
@@ -94,6 +95,7 @@ button{
     position:absolute;
     right: -1px;
     top: -1px;
+    visibility: hidden;
 
 }
 span{
@@ -111,3 +113,6 @@ span{
     font-size: 13px;
     margin-top: 8px;
 }
+
+
+

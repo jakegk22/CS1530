@@ -14,16 +14,19 @@
                 <h2>Login</h2>
                 <form>
                     <input type="email" class="input-box"
-                    placeholder="Your Email Id" required>
+                    placeholder="Your Email Id">
 
                     <input type="password" class="input-box"
-                    placeholder="Password" required>
-            
-<input type="checkbox"><span>Remember Me</span>
-                </form>
-                <button class="submit-btn" onclick="location.href='social_feed.html'" type="button">Submit</button>
+                    placeholder="Password">
+                    <!--
+                    <button type="button" class="submit-btn" onclick="location.href='social_feed.html'" >Submit</input>
+                    -->
 
-                <button type="button" class="btn" onclick="openRegister()">"I'm new here"</button>
+                    <input type="checkbox"><span>Remember Me</span>
+
+                </form>
+
+                <button class="button" class="btn" id="backbtn" onclick="openRegister()">"I'm new here"</button>
                 <a href="">Forgot Password</a>
             
             </div>
@@ -32,19 +35,24 @@
                 <h2>Register</h2>
                 <form>
                     <input type="text" class="input-box"
-                    placeholder="Your Name" required>
+                    placeholder="Your Name">
 
 
                     <input type="email" class="input-box"
-                    placeholder="Your Email Id" required>
+                    placeholder="Your Email Id" >
 
                     <input type="password" class="input-box"
-                    placeholder="Password" required>
-<button type="submit" class="submit-btn">Submit</button>
+                    placeholder="Password" >
+                    
 
-<input type="checkbox"><span>Remember Me</span>
+                    
                 </form>
-                <button type="button" class="btn" onclick="openLogin()">"I've an account"</button>
+                <!---
+                  <button type="submit" class="submit-btn" onclick="location.href='social_feed.html'">Submit</button>
+                -->
+                <button type="submit" class="submit-btn" onclick="location.href='social_feed.html'">Submit</button>
+                <button type="button" class="btn" onclick="openLogin()">"I have an account"</button>
+                <input type="checkbox"><span>Remember Me</span>
                 <a href="">Forgot Password</a>
 
 
