@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="create_event.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div id="myheader" class="header">
+            LOCALS
+        </div>
+
+        <div id="myside-menu" class="side-menu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#" onclick="location.href='profile.html'">Profile</a>
+            <a href="#" onclick="location.href='social_feed.html'">Social Feed</a>
+        </div>
+
+        <div class="creationPage">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <div class= creator>
+                <div class="header">
+                    Event Creation
+                </div>
+                <div class="picture">
+                    Event Image
+                </div>
+                <div class="eventInfo">
+                    <div class="name">
+                        <div class="details">
+                            Event Name:
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="description">
+                        <div class="details">
+                            Event Description:
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="Description">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="location">
+                        <div class="details">
+                            Event Location:
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="Location">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="guests">
+                        <div class="details">
+                            Max # of Guests:
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="# of Guests">
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="tags">
+                        <div class="details">
+                            Tags:
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="Tags">
+                        </div>
+                    </div>
+                </div>
+                    <button class="create" onclick="location.href='social_feed.html'" type="button">Create Event</button>
+            </div>
+        </div>
+
+
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+
+            function openNav() {
+              document.getElementById("myside-menu").style.width = "250px";
+              document.getElementById("myfeed").style.marginLeft = "250px";
+              document.getElementById("myfeed").style.opacity = ".5";
+              document.getElementById("myheader").style.marginLeft="250px";
+              document.getElementById("myheader").style.opacity =".5";
+
+            }
+
+            function closeNav() {
+              document.getElementById("myside-menu").style.width = "0";
+              document.getElementById("myfeed").style.marginLeft= "0";
+              document.getElementById("myfeed").style.opacity = "1";
+              document.getElementById("myheader").style.marginLeft="0";
+              document.getElementById("myheader").style.opacity ="1";
+            }
+
+            function stickyHeader(){
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
+        </script>
+    </body>
+</html>
