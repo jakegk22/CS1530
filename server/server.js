@@ -25,6 +25,12 @@ app.get('/profile.css',(req,res) => {
 app.get('/social.js',(req,res) => {
     res.sendFile(path.join(__dirname,'..','social.js'));
 })
+app.get('create_event.html',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','create_event.html'));
+})
+app.get('create_event.css',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','create_event.css'));
+})
 
 
 app.listen(port, () => {
