@@ -22,56 +22,95 @@
                 <div class="header">
                     Event Creation
                 </div>
-                <div class="picture">
-                    Event Image
+                <form id="eventCreateForm">
+                <div class="pictureStuff">
+                    <img id="eventPic" class="picture">
+                    <input type="file" id="file" name="image" onchange="loadImage(event)">
                 </div>
                 <div class="eventInfo">
-                    <div class="name">
-                        <div class="details">
-                            Event Name:
+                        <div class="name">
+                            <div class="details">
+                                Event Name:
+                            </div>
+                            <div class="textbox">
+                                <input id="name" type="text" placeholder="Name">
+                            </div>
                         </div>
-                        <div class="textbox">
-                            <input type="text" placeholder="Name">
+                        <br><br>
+                        <div class="description">
+                            <div class="details">
+                                Event Description:
+                            </div>
+                            <div class="textbox">
+                                <input id="description" type="text" size="80" placeholder="Description">
+                            </div>
                         </div>
-                    </div>
-                    <br><br>
-                    <div class="description">
-                        <div class="details">
-                            Event Description:
+                        <br><br>
+                        <div class="date">
+                            <div class="details">
+                                Date (MM/DD/YYYY):
+                            </div>
+                            <div class="textbox">
+                                <input id="date" type="text" placeholder="Date">
+                            </div>
                         </div>
-                        <div class="textbox">
-                            <input type="text" placeholder="Description">
+                        <br><br>
+                        <div class="time">
+                            <div class="details">
+                                Time:
+                            </div>
+                            <div class="textbox">
+                                <input id="time" type="text" placeholder="Time">
+                            </div>
                         </div>
-                    </div>
-                    <br><br>
-                    <div class="location">
-                        <div class="details">
-                            Event Location:
+                        <br><br>
+                        <div class="location">
+                            <div class="details">
+                                Event Location:
+                            </div>
+                            <div class="textbox">
+                                <input id="location" type="text" placeholder="Location">
+                            </div>
                         </div>
-                        <div class="textbox">
-                            <input type="text" placeholder="Location">
+                        <br><br>
+                        <div class="price">
+                            <div class="details">
+                                Price:
+                            </div>
+                            <div class="textbox">
+                                <input id="price" type="text" placeholder="Price">
+                            </div>
                         </div>
-                    </div>
-                    <br><br>
-                    <div class="guests">
-                        <div class="details">
-                            Max # of Guests:
+                        <br><br>
+                        <div class="guests">
+                            <div class="details">
+                                Max # of Guests:
+                            </div>
+                            <div class="textbox">
+                                <input id="price" type="text" placeholder="# of Guests">
+                            </div>
                         </div>
-                        <div class="textbox">
-                            <input type="text" placeholder="# of Guests">
+                        <br><br>
+                        <div class="public">
+                            <div class="details">
+                                Public/Private?:
+                            </div>
+                            <div class="textbox">
+                                <input id="public" type="text" placeholder="Privacy">
+                            </div>
                         </div>
-                    </div>
-                    <br><br>
-                    <div class="tags">
-                        <div class="details">
-                            Tags:
+                        <br><br>
+                        <div class="tags">
+                            <div class="details">
+                                Tags:
+                            </div>
+                            <div class="textbox">
+                                <input id="tags" type="text" placeholder="Tags">
+                            </div>
                         </div>
-                        <div class="textbox">
-                            <input type="text" placeholder="Tags">
-                        </div>
-                    </div>
                 </div>
-                    <button class="create" onclick="location.href='social_feed.html'" type="button">Create Event</button>
+                    <button class="create" onclick="location.href='social_feed.html'" type="submit">Create Event</button>
+                </form>
             </div>
         </div>
 
@@ -106,6 +145,11 @@
                     header.classList.remove("sticky");
                 }
             }
+
+            var loadImage = function(event) {
+        	var image = document.getElementById('eventPic');
+        	image.src = URL.createObjectURL(event.target.files[0]);
+};
         </script>
     </body>
 </html>
